@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>href取得のデモ</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<p class="attr-txt"></p>
+	<p class="href-txt"></p>
+	<script>
+		$(function(){
+			$('.attr-txt').text(document.getElementsByTagName('link')[0].getAttribute('href'));
+			$('.href-txt').text(document.styleSheets[0].href);
+		});
+	</script>
+</body>
+</html>

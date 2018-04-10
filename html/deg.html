@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>角度計算</title>
+	<style>
+	.rect {
+		border: 1px solid #888;
+		width: 825px;
+		height: 300px;
+		padding: 0 8px 8px 0;
+		margin: 200px auto 0;
+		position: relative;
+	}
+	#target {
+		position: absolute;
+		display: block;
+		width: 8px;
+		height: 8px;
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div class="rect">
+		<span id="target"></span>
+	</div>
+	<p>x：<span id="x"></span></p>
+	<p>y：<span id="y"></span></p>
+	<p>deg：<span id="deg"></span></p>
+	<script>
+		function setPosition ( angle ) {
+			var x1 = 412.5 ;
+			var y1 = 150 ;
+			var r = Math.floor(Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2)));
+			var a = angle - 90 ;
+
+			var x2 = x1 + r * Math.cos( a * (Math.PI / 180) ) ;
+			var y2 = y1 + r * Math.sin( a * (Math.PI / 180) ) ;
+
+			x2 = (x2 < 0) ? 0 : (x2 > x1*2) ? x1*2 : x2;
+			y2 = (y2 < 0) ? 0 : (y2 > y1*2) ? y1*2 : y2;
+
+			var element = document.getElementById("target") ;
+			element.style.top = y2 + "px" ;
+			element.style.left = x2 + "px" ;
+			document.getElementById("x").innerHTML=Math.round(x2);
+			document.getElementById("y").innerHTML=Math.round(y2);
+			document.getElementById("deg").innerHTML=a;
+		}
+
+		var degree = 0 ;
+		// setPosition( degree )
+
+		setInterval( function () {
+			setPosition( ++degree ) ;
+		}, 100 ) ;
+	</script>
+</body>
+</html>
