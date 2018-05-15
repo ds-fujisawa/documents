@@ -67,12 +67,12 @@ jQuery(window).load
 
 aタグやbuttonタグにevent処理を独自に実装する場合は処理の終わりに`return false;`を付ける
 
-##　不具合修正等で引っかかった点
+## 不具合修正等で引っかかった点
 ### jQueryのonは追加式なので注意
 重複を避ける場合はjavascriptのaddEventListenerを使うか、同時にoffを使う
 ### iOSの場合、スクロールでresizeイベントが発火
 画面の横幅を比較するか、向きが変わったときのみ(orientationchangeイベント)resize処理を行う  
-** ※orientationchangeイベントだとviewport変更時のresizeには反応しないので注意 **
+**※orientationchangeイベントだとviewport変更時のresizeには反応しないので注意**
 ### href取得の際はプロパティによって相対パスか絶対パスかが変わる
 ```html
 <link rel="stylesheet" type="text/css" href="./css/style.css">

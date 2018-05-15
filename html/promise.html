@@ -14,11 +14,9 @@
 	<div>-------Promise---------</div>
 	<script type="text/javascript">
 		const fn = (id) => {
-			return Promise.resolve().then(() => {
-				return new Promise((resolve) => {
-					$(id).append($('<div>1</div>'));
-					resolve();
-				});
+			return new Promise((resolve) => {
+				$(id).append($('<div>1</div>'));
+				resolve();
 			}).then(() => {
 				return new Promise((resolve) => {
 					setTimeout(() => {
