@@ -90,6 +90,26 @@ console.log('val', val);
 // (4, 3 [1,2,3,4])
 ```
 
+### Array.prototype.includes
+[詳しくはこちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+```javascript
+/* 概要 */
+// 配列の要素を検索する時とかに使用
+// ※．第2引数(fromIndex)は省略可能
+
+/* 使い方 */
+console.log([1, 2, 3].includes(2));
+console.log([1, 2, 3].includes(4));
+console.log([1, 2, 3].includes(3, 3));
+console.log([1, 2, 3].includes(3, -1));
+
+/* 結果 */
+// (true)
+// (false)
+// (false)
+// (true)
+```
+
 ### Array.prototype.join
 [詳しくはこちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 ```javascript
