@@ -1,4 +1,4 @@
-### ES6(2015)で追加された機能・構文
+### ES6(2015)以降で追加された機能・構文
 **変数**
 ```javascript
 let a = 'test';		// 再宣言が不可能
@@ -15,6 +15,8 @@ var fn = function (a, b) {
 const fn = (a, b) => {
 	return a + b;
 }
+// ↓引数は１つの場合()省略可能、戻り値のみの場合{}省略可能
+const fn = a => a * 2;  // (a) => { return a * 2 } と同じ
 
 /* ※thisの参照先が異なるので注意 */
 // (例)
@@ -83,7 +85,30 @@ console.log(multiply(10));	// 100
 ```
 **展開演算子**
 ```javascript
-let arr = ["a", "b", "c"]
+const arr = ["a", "b", "c"]
 console.log(arr);		// Array(3)
 console.log(...arr);	// a b c
+
+/* ※Objectのコピーにも使える */
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+const hoge = obj;  // ディープコピー
+const foo = {...obj};  // シャロウコピー
+// const foo = Object.assign({}, obj) と同じ
+
+hoge.a = 3;  // 参照も渡してしまっているため、元のobjも変わってしまう
+/**
+ * console.log(hoge, obj);
+ * [Result]
+ * hoge: { a: 3, b: 2, c: 3 }, obj: { a: 3, b: 2, c: 3 }
+ */
+foo.a = 3;  // 値だけ渡しているのでfooしか変わらない
+/**
+ * console.log(foo, obj);
+ * [Result]
+ * foo: { a: 3, b: 2, c: 3 }, obj: { a: 1, b: 2, c: 3 }
+ */
 ```
