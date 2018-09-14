@@ -112,3 +112,17 @@ foo.a = 3;  // 値だけ渡しているのでfooしか変わらない
  * foo: { a: 3, b: 2, c: 3 }, obj: { a: 1, b: 2, c: 3 }
  */
 ```
+**テンプレート文字列**
+```javascript
+const foo = 'foo'
+const bar = 'bar'
+const baz = () => {
+    return 'baz'
+}
+
+// 変数を展開する
+const foobar = `${foo}, ${bar}` // Result → "foo, bar"
+
+// 式の評価もできる
+const some = `${baz()}` // Result → "baz"
+```
