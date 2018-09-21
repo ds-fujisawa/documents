@@ -265,3 +265,7 @@ for(let i = 1; i < 10; i++) {
 * [Promise.race()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
 * [Promise.reject()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject)
 * [Promise.resolve()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
+
+## もっと詳細に知りたい方
+**[Promiseの本](http://azu.github.io/promises-book/)**  
+こちらがかなり細かく記載されていて分かり易いです
