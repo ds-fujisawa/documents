@@ -144,6 +144,27 @@ const add = n => new Promise(resolve => {
   addArr.reduce((a, c) => a.then(c), Promise.resolve());
 })();
 
+// reduceでやってることは下記
+/*
+  Promise.resolve()
+  .then(() => {
+    console.log(1);
+    return add(1).then(v => {
+      console.log(v);
+      })
+    }).then(() => {
+      console.log(2);
+      return add(2).then(v => {
+        console.log(v);
+        })
+      }).then(() => {
+        console.log(3);
+        return add(3).then(v => {
+          console.log(v);
+          })
+        })...
+ */
+
 /* 結果 */
 // 1 11 2 12 3 13 4 14
 ```
