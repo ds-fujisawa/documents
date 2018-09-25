@@ -31,80 +31,43 @@
 
 **デモ**
 
-<style type="text/css">
-#parent {
-	display: inline-block;
-	width: 400px;
-	height: 400px;
-	padding: 10px;
-	margin: 10px;
-	border: 1px solid gray;
-	background-color: pink;
-	overflow: hidden;
-}
-#child {
-	width: 200px;
-	height: 600px;
-	padding: 10px;
-	margin: 10px;
-	border: 1px solid gray;
-	background-color: skyblue;
-}
-.info {
-	display: inline-block;
-	vertical-align: top;
-}
-.js, .jquery {
-	display: inline-block;
-	vertical-align: top;
-	margin-left: 1rem;
-	padding: 1rem;
-}
-</style>
 <div>
 	<div id="parent">
 		<div id="child"></div>
 	</div>
-	<p class="info">
-		<b>id:parent(ピンク)</b><br>
-		[style]<br>
-		display: inline-block;<br>
-		width: 400px;<br>
-		height: 400px;<br>
-		padding: 10px;<br>
-		margin: 10px;<br>
-		border: 1px solid gray;<br>
-		background-color: pink;<br>
-		overflow: hidden;<br>
-		<br>
-		<b>id:child(水色)</b><br>
-		[style]<br>
-		width: 200px;<br>
-		height: 600px;<br>
-		padding: 10px;<br>
-		margin: 10px;<br>
-		border: 1px solid gray;<br>
-		background-color: skyblue;
-	</p>
 </div>
+
+|id:parent(ピンク)|id:child(水色)|
+|:--|:--|
+|display: inline-block;|width: 200px;|
+|width: 400px;|height: 600px;|
+|height: 400px;|padding: 10px;|
+|padding: 10px;|margin: 10px;|
+|margin: 10px;|border: 1px solid gray;|
+|border: 1px solid gray;|background-color: skyblue;|
+|background-color: pink;||
+|overflow: hidden;||
+
 <div class="js">
 	<h1>JavaScript</h1>
 	<div class="js-parent">
-		<h2>parent</h2>
+		<h2>parent(ピンク)</h2>
 	</div>
 	<div class="js-child">
-		<h2>child</h2>
+		<h2>child(水色)</h2>
 	</div>
 </div>
+
 <div class="jquery">
 	<h1>jQuery</h1>
 	<div class="jquery-parent">
-		<h2>parent</h2>
+		<h2>parent(ピンク)</h2>
 	</div>
 	<div class="jquery-child">
-		<h2>child</h2>
+		<h2>child(水色)</h2>
 	</div>
 </div>
+
 <script type="text/javascript">
 	$(function () {
 		$('.js-parent')
@@ -209,21 +172,6 @@ aタグやbuttonタグにevent処理を独自に実装する場合は処理の�
 
 **[デモ]**
 
-<style type="text/css">
-	.bubbling div {
-		width: 200px;
-		height: 200px;
-		display: inline-block;
-		background-color: pink;
-	}
-	.bubbling div > a {
-		width: 100%;
-		height: 100%;
-		text-decoration: none;
-		color: black;
-		display: inline-block;
-	}
-</style>
 <div class="bubbling">
 	<div class="none">
 		<a href="?a=a">none</a>
@@ -238,6 +186,7 @@ aタグやbuttonタグにevent処理を独自に実装する場合は処理の�
 		<a href="?a=a">return_false</a>
 	</div>
 </div>
+
 <script type="text/javascript">
 	$(function() {
 		$('.bubbling div').click(()=>{alert('hoge')});
@@ -303,44 +252,6 @@ $(function(){
 
 ### フリック操作
 
-<style type="text/css">
-	#flickscroll {
-		margin: 0 auto;
-		width: 400px;
-		height: 400px;
-		text-align: left;
-		position: relative;
-		overflow: hidden;
-		cursor: pointer;
-	}
-	#flickscroll ul {
-		top: 0;
-		left: 0;
-		height: 400px;
-		position: absolute;
-		display: inline-block;
-		overflow: hidden;
-	}
-	#flickscroll ul li {
-		width: 400px;
-		height: 400px;
-		float: left;
-		display: inline;
-		overflow: hidden;
-	}
-	#flickscroll ul:after {
-		content: ".";
-		height: 0;
-		clear: both;
-		display: block;
-		visibility: hidden;
-	}
-	.gallery-wrapper {
-		margin: 0 auto;
-		width: 400px;
-		height: 400px;
-	}
-</style>
 <div id="flickscroll">
 	<ul>
 		<li style="background-color: aqua;"></li>
@@ -477,22 +388,6 @@ $(function() {
 
 ### 角度計算
 
-<style>
-.rect {
-	border: 1px solid #888;
-	width: 825px;
-	height: 300px;
-	padding: 0 8px 8px 0;
-	position: relative;
-}
-#target {
-	position: absolute;
-	display: block;
-	width: 8px;
-	height: 8px;
-	background-color: red;
-}
-</style>
 <div class="rect">
 	<span id="target"></span>
 </div>
