@@ -77,3 +77,46 @@ Object.hasOwnProperty.call(target, "d");
 // true
 // false
 ```
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<div>-------used async/await---------</div>
+<div id='hoge'></div>
+<div>-------used async/await---------</div>
+<div>-------Promise---------</div>
+<div id='foo'></div>
+<div>-------Promise---------</div>
+<script type="text/javascript">
+	const fn = (id) => {
+		return new Promise((resolve) => {
+			$(id).append($('<div>1</div>'));
+			resolve();
+		}).then(() => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					$(id).append($('<div>2</div>'));
+					resolve();
+				}, 2000);
+			});
+		}).then(() => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					$(id).append($('<div>3</div>'));
+					resolve();
+				}, 1000);
+			})
+		}).then(function() {
+			$(id).append($('<div>4</div>'));
+		});
+	};
+	(async () => {
+		for(let i = 0; i < 2; i++) {
+			await fn('#hoge');
+		}
+	})();
+	(() => {
+		for(let i = 0; i < 2; i++) {
+			fn('#foo');
+		}
+	})();
+</script>
