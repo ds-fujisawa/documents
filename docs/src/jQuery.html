@@ -533,7 +533,7 @@ $(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
         leftMax = -((listWidth)*((listCount)-1));
 
         $setMainUl.each(function() {
-            $(this).css({width:(listWidth)*(listCount)});
+            $(this).css({width: listWidth * listCount + 100});
         });
 
         var isTouch = ('ontouchstart' in window);
@@ -542,7 +542,6 @@ $(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
                 var $setMainUlNot = $setMainId.children('ul:not(:animated)');
                 $setMainUlNot.each(function() {
                     e.preventDefault();
-                    console.log(this);
                     this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
                     this.leftBegin = parseInt($(this).css('left'));
                     this.left = parseInt($(this).css('left'));
@@ -605,7 +604,6 @@ $(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
             <span class="hljs-keyword">var</span> $setMainUlNot = $setMainId.children(<span class="hljs-string">&apos;ul:not(:animated)&apos;</span>);
             $setMainUlNot.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 e.preventDefault();
-                <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);
                 <span class="hljs-keyword">this</span>.pageX = (isTouch ? event.changedTouches[<span class="hljs-number">0</span>].pageX : e.pageX);
                 <span class="hljs-keyword">this</span>.leftBegin = <span class="hljs-built_in">parseInt</span>($(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">&apos;left&apos;</span>));
                 <span class="hljs-keyword">this</span>.left = <span class="hljs-built_in">parseInt</span>($(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">&apos;left&apos;</span>));
@@ -748,7 +746,7 @@ setInterval(() =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-25T03:05:32.746Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:13:37.025Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-25T03:19:49.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:20:46.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

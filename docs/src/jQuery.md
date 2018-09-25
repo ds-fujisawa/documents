@@ -271,7 +271,7 @@ $(function(){
 		leftMax = -((listWidth)*((listCount)-1));
 
 		$setMainUl.each(function() {
-			$(this).css({width:(listWidth)*(listCount)});
+			$(this).css({width: listWidth * listCount + 100});
 		});
 
 		var isTouch = ('ontouchstart' in window);
@@ -280,7 +280,6 @@ $(function(){
 				var $setMainUlNot = $setMainId.children('ul:not(:animated)');
 				$setMainUlNot.each(function() {
 					e.preventDefault();
-					console.log(this);
 					this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
 					this.leftBegin = parseInt($(this).css('left'));
 					this.left = parseInt($(this).css('left'));
@@ -344,7 +343,6 @@ $(function() {
 			var $setMainUlNot = $setMainId.children('ul:not(:animated)');
 			$setMainUlNot.each(function() {
 				e.preventDefault();
-				console.log(this);
 				this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
 				this.leftBegin = parseInt($(this).css('left'));
 				this.left = parseInt($(this).css('left'));
