@@ -394,8 +394,8 @@ $(function() {
 <p>deg：<span id="deg"></span></p>
 <script>
 	const setPosition = angle => {
-		const x1 = 412.5 ;
-		const y1 = 150 ;
+		const x1 = 250;
+		const y1 = 150;
 		const r = Math.floor(Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2)));
 		const a = angle - 90 ;
 
@@ -423,8 +423,8 @@ $(function() {
 
 ```js
 const setPosition = angle => {
-	const x1 = 412.5 ;
-	const y1 = 150 ;
+	const x1 = 250;
+	const y1 = 150;
 	const r = Math.floor(Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2)));
 	const a = angle - 90 ;
 
