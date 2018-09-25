@@ -34,6 +34,8 @@
 
     
         
+        <link rel="stylesheet" href="../styles/website.css">
+        
     
         
     
@@ -265,80 +267,73 @@
 <li><code>outerWidth(true)</code>    &#x8981;&#x7D20;&#x306E;margin&#x3001;border&#x3001;padding&#x3092;&#x542B;&#x3093;&#x3060;&#x5E45;</li>
 </ul>
 <p><strong>&#x30C7;&#x30E2;</strong></p>
-<p><style type="text/css"></p>
-<h1>parent {</h1>
-<pre><code>display: inline-block;
-width: 400px;
-height: 400px;
-padding: 10px;
-margin: 10px;
-border: 1px solid gray;
-background-color: pink;
-overflow: hidden;
-</code></pre><p>}</p>
-<h1>child {</h1>
-<pre><code>width: 200px;
-height: 600px;
-padding: 10px;
-margin: 10px;
-border: 1px solid gray;
-background-color: skyblue;
-</code></pre><p>}
-.info {
-    display: inline-block;
-    vertical-align: top;
-}
-.js, .jquery {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 1rem;
-    padding: 1rem;
-}
-&lt;/style&gt;</p>
-<p><div>
+<div>
     <div id="parent">
         <div id="child"></div>
-    &lt;/div&gt;
-    <p class="info">
-        <b>id:parent(ピンク)</b><br>
-        [style]<br>
-        display: inline-block;<br>
-        width: 400px;<br>
-        height: 400px;<br>
-        padding: 10px;<br>
-        margin: 10px;<br>
-        border: 1px solid gray;<br>
-        background-color: pink;<br>
-        overflow: hidden;<br>
-        <br>
-        <b>id:child(水色)</b><br>
-        [style]<br>
-        width: 200px;<br>
-        height: 600px;<br>
-        padding: 10px;<br>
-        margin: 10px;<br>
-        border: 1px solid gray;<br>
-        background-color: skyblue;
-    </p>
-&lt;/div&gt;</p>
-<p><div class="js">
-    <h1>JavaScript</h1>
+    </div>
+</div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">id:parent(&#x30D4;&#x30F3;&#x30AF;)</th>
+<th style="text-align:left">id:child(&#x6C34;&#x8272;)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">display: inline-block;</td>
+<td style="text-align:left">width: 200px;</td>
+</tr>
+<tr>
+<td style="text-align:left">width: 400px;</td>
+<td style="text-align:left">height: 600px;</td>
+</tr>
+<tr>
+<td style="text-align:left">height: 400px;</td>
+<td style="text-align:left">padding: 10px;</td>
+</tr>
+<tr>
+<td style="text-align:left">padding: 10px;</td>
+<td style="text-align:left">margin: 10px;</td>
+</tr>
+<tr>
+<td style="text-align:left">margin: 10px;</td>
+<td style="text-align:left">border: 1px solid gray;</td>
+</tr>
+<tr>
+<td style="text-align:left">border: 1px solid gray;</td>
+<td style="text-align:left">background-color: skyblue;</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color: pink;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">overflow: hidden;</td>
+</tr>
+</tbody>
+</table>
+<div class="js">
+    <h1 id="javascript">JavaScript</h1>
     <div class="js-parent">
-        <h2>parent</h2>
+        <h2 id="parent&#x30D4;&#x30F3;&#x30AF;">parent(&#x30D4;&#x30F3;&#x30AF;)</h2>
     </div>
     <div class="js-child">
-        <h2>child</h2>
+        <h2 id="child&#x6C34;&#x8272;">child(&#x6C34;&#x8272;)</h2>
     </div>
-&lt;/div&gt;</p>
-<p><div class="jquery">
-    <h1>jQuery</h1>
+</div>
+
+<div class="jquery">
+    <h1 id="jquery">jQuery</h1>
     <div class="jquery-parent">
-        <h2>parent</h2>
+        <h2 id="parent&#x30D4;&#x30F3;&#x30AF;">parent(&#x30D4;&#x30F3;&#x30AF;)</h2>
     </div>
     <div class="jquery-child">
-        <h2>child</h2>
+        <h2 id="child&#x6C34;&#x8272;">child(&#x6C34;&#x8272;)</h2>
     </div>
-&lt;/div&gt;</p>
+</div>
+
 <script type="text/javascript">
     $(function () {
         $('.js-parent')
@@ -362,92 +357,77 @@ background-color: skyblue;
     });
 </script>
 
-<pre><code class="lang-js">$(function () {
-    $(&#39;.js-parent&#39;)
-    .append(&#39;&lt;p&gt;clientHeight：&#39;+document.getElementById(&#39;parent&#39;).clientHeight+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;scrooHeight：&#39;+document.getElementById(&#39;parent&#39;).scrollHeight+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;offsetHeight：&#39;+document.getElementById(&#39;parent&#39;).offsetHeight+&#39;px&lt;/p&gt;&#39;)
-    $(&#39;.js-child&#39;)
-    .append(&#39;&lt;p&gt;clientHeight：&#39;+document.getElementById(&#39;child&#39;).clientHeight+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;scrooHeight：&#39;+document.getElementById(&#39;child&#39;).scrollHeight+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;offsetHeight：&#39;+document.getElementById(&#39;child&#39;).offsetHeight+&#39;px&lt;/p&gt;&#39;)
-    $(&#39;.jquery-parent&#39;)
-    .append(&#39;&lt;p&gt;height()：&#39;+$(&#39;#parent&#39;).height()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;innerHeight()：&#39;+$(&#39;#parent&#39;).innerHeight()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;outerHeight()：&#39;+$(&#39;#parent&#39;).outerHeight()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;outerHeight(true)&#39;+$(&#39;#parent&#39;).outerHeight(true)+&#39;px&lt;/p&gt;&#39;);
-    $(&#39;.jquery-child&#39;)
-    .append(&#39;&lt;p&gt;height()：&#39;+$(&#39;#child&#39;).height()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;innerHeight()：&#39;+$(&#39;#child&#39;).innerHeight()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;outerHeight()：&#39;+$(&#39;#child&#39;).outerHeight()+&#39;px&lt;/p&gt;&#39;)
-    .append(&#39;&lt;p&gt;outerHeight(true)&#39;+$(&#39;#child&#39;).outerHeight(true)+&#39;px&lt;/p&gt;&#39;);
+<pre><code class="lang-js">$(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    $(<span class="hljs-string">&apos;.js-parent&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;clientHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;parent&apos;</span>).clientHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;scrooHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;parent&apos;</span>).scrollHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;offsetHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;parent&apos;</span>).offsetHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    $(<span class="hljs-string">&apos;.js-child&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;clientHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;child&apos;</span>).clientHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;scrooHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;child&apos;</span>).scrollHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;offsetHeight&#xFF1A;&apos;</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;child&apos;</span>).offsetHeight+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    $(<span class="hljs-string">&apos;.jquery-parent&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;height()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#parent&apos;</span>).height()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;innerHeight()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#parent&apos;</span>).innerHeight()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;outerHeight()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#parent&apos;</span>).outerHeight()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;outerHeight(true)&apos;</span>+$(<span class="hljs-string">&apos;#parent&apos;</span>).outerHeight(<span class="hljs-literal">true</span>)+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>);
+    $(<span class="hljs-string">&apos;.jquery-child&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;height()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#child&apos;</span>).height()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;innerHeight()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#child&apos;</span>).innerHeight()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;outerHeight()&#xFF1A;&apos;</span>+$(<span class="hljs-string">&apos;#child&apos;</span>).outerHeight()+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>)
+    .append(<span class="hljs-string">&apos;&lt;p&gt;outerHeight(true)&apos;</span>+$(<span class="hljs-string">&apos;#child&apos;</span>).outerHeight(<span class="hljs-literal">true</span>)+<span class="hljs-string">&apos;px&lt;/p&gt;&apos;</span>);
 });
 </code></pre>
-<h2>実行タイミング</h2>
-<h3>JavaScript</h3>
+<h2 id="&#x5B9F;&#x884C;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;">&#x5B9F;&#x884C;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;</h2>
+<h3 id="javascript">JavaScript</h3>
 <ul>
-<li><strong><code>document.addEventListener(&#39;DOMContentLoaded&#39;, function())</code>    HTMLが読み込まれた時</strong></li>
-<li><strong><code>window.onload = function()</code>    画像などコンテンツ全体が読み込まれた時</strong></li>
+<li><strong><code>document.addEventListener(&apos;DOMContentLoaded&apos;, function())</code>    HTML&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong></li>
+<li><strong><code>window.onload = function()</code>    &#x753B;&#x50CF;&#x306A;&#x3069;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;&#x5168;&#x4F53;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong></li>
 </ul>
-<h3>jQuery</h3>
+<h3 id="jquery">jQuery</h3>
 <ul>
-<li><strong><code>$(document).ready</code>    HTMLが読み込まれた時</strong>
+<li><strong><code>$(document).ready</code>    HTML&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong>
 ```javascript
-$(function(){ /<em>処理</em>/ });</li>
+$(function(){ /<em>&#x51E6;&#x7406;</em>/ });</li>
 </ul>
-<p>jQuery(function(){ /<em>処理</em>/ });</p>
-<p>$(document).ready(function(){ /<em>処理</em>/ });</p>
-<p>jQuery(document).ready(function(){ /<em>処理</em>/ });</p>
-<pre><code>* **`$(window).load`        画像などコンテンツ全体が読み込まれた時**
+<p>jQuery(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
+<p>$(document).ready(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
+<p>jQuery(document).ready(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
+<pre><code>* **`$(window).load`        &#x753B;&#x50CF;&#x306A;&#x3069;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;&#x5168;&#x4F53;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;**
 ```javascript
-$(window).load(function(){ /*処理*/ });
+$(window).load(function(){ /*&#x51E6;&#x7406;*/ });
 
-jQuery(window).load(function(){ /*処理*/ });
+jQuery(window).load(function(){ /*&#x51E6;&#x7406;*/ });
 
-$(window).on(&#39;load&#39;, function(){ /*処理*/ });
+$(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
 
-jQuery(window).on(&#39;load&#39;, function(){ /*処理*/ });
-</code></pre><p>※jQuery3からはdocument-readyが常に非同期になっているので↓は×みたい<br>(まだ試してはいない。。。)</p>
+jQuery(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
+</code></pre><p>&#x203B;jQuery3&#x304B;&#x3089;&#x306F;document-ready&#x304C;&#x5E38;&#x306B;&#x975E;&#x540C;&#x671F;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x2193;&#x306F;&#xD7;&#x307F;&#x305F;&#x3044;<br>(&#x307E;&#x3060;&#x8A66;&#x3057;&#x3066;&#x306F;&#x3044;&#x306A;&#x3044;&#x3002;&#x3002;&#x3002;)</p>
 <pre><code>$(function(){
-  $(window).on(&#39;load&#39;, function(){ /*処理*/ });
-   /*処理*/
+  $(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
+   /*&#x51E6;&#x7406;*/
 });
-</code></pre><p>↓のように分けないといけないみたい</p>
-<pre><code>$(function(){ /* 処理 */ });
-$(window).on(&#39;load&#39;, function(){ /*処理*/ });
-</code></pre><h4>処理の順番</h4>
+</code></pre><p>&#x2193;&#x306E;&#x3088;&#x3046;&#x306B;&#x5206;&#x3051;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x307F;&#x305F;&#x3044;</p>
+<pre><code>$(function(){ /* &#x51E6;&#x7406; */ });
+$(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
+</code></pre><h4 id="&#x51E6;&#x7406;&#x306E;&#x9806;&#x756A;">&#x51E6;&#x7406;&#x306E;&#x9806;&#x756A;</h4>
 <ol>
-<li>ページの読み込みが始まる</li>
-<li>HTMLの読み込みが終わる</li>
-<li>$(document).readyが実行</li>
-<li>画像など含めすべてのコンテンツの読み込みが終わる</li>
-<li>$(window).loadが実行</li>
+<li>&#x30DA;&#x30FC;&#x30B8;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x304C;&#x59CB;&#x307E;&#x308B;</li>
+<li>HTML&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x304C;&#x7D42;&#x308F;&#x308B;</li>
+<li>$(document).ready&#x304C;&#x5B9F;&#x884C;</li>
+<li>&#x753B;&#x50CF;&#x306A;&#x3069;&#x542B;&#x3081;&#x3059;&#x3079;&#x3066;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x304C;&#x7D42;&#x308F;&#x308B;</li>
+<li>$(window).load&#x304C;&#x5B9F;&#x884C;</li>
 </ol>
-<h2>イベントのバブリング (伝播) について</h2>
-<p>クリックなどのイベントは子要素から親要素へと伝播される（バブリング）ため、意図しない動作をする可能性があるので注意が必要</p>
+<h2 id="&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306E;&#x30D0;&#x30D6;&#x30EA;&#x30F3;&#x30B0;-&#x4F1D;&#x64AD;-&#x306B;&#x3064;&#x3044;&#x3066;">&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306E;&#x30D0;&#x30D6;&#x30EA;&#x30F3;&#x30B0; (&#x4F1D;&#x64AD;) &#x306B;&#x3064;&#x3044;&#x3066;</h2>
+<p>&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x306A;&#x3069;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306F;&#x5B50;&#x8981;&#x7D20;&#x304B;&#x3089;&#x89AA;&#x8981;&#x7D20;&#x3078;&#x3068;&#x4F1D;&#x64AD;&#x3055;&#x308C;&#x308B;&#xFF08;&#x30D0;&#x30D6;&#x30EA;&#x30F3;&#x30B0;&#xFF09;&#x305F;&#x3081;&#x3001;&#x610F;&#x56F3;&#x3057;&#x306A;&#x3044;&#x52D5;&#x4F5C;&#x3092;&#x3059;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x304C;&#x5FC5;&#x8981;</p>
 <ul>
-<li><strong><code>event.preventDefault()</code>    その要素のイベントをキャンセル</strong></li>
-<li><strong><code>event.stopPropagation()</code>    親要素への伝播をキャンセル</strong></li>
-<li><strong><code>return false;</code>    その要素のイベントも親要素への伝播も両方キャンセル</strong></li>
+<li><strong><code>event.preventDefault()</code>    &#x305D;&#x306E;&#x8981;&#x7D20;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x3092;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;</strong></li>
+<li><strong><code>event.stopPropagation()</code>    &#x89AA;&#x8981;&#x7D20;&#x3078;&#x306E;&#x4F1D;&#x64AD;&#x3092;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;</strong></li>
+<li><strong><code>return false;</code>    &#x305D;&#x306E;&#x8981;&#x7D20;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x3082;&#x89AA;&#x8981;&#x7D20;&#x3078;&#x306E;&#x4F1D;&#x64AD;&#x3082;&#x4E21;&#x65B9;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;</strong></li>
 </ul>
-<p>aタグやbuttonタグにevent処理を独自に実装する場合は処理の終わりに<code>return false;</code>を付ける</p>
-<p><strong>[デモ]</strong></p>
-<p><style type="text/css">
-    .bubbling div {
-        width: 200px;
-        height: 200px;
-        display: inline-block;
-        background-color: pink;
-    }
-    .bubbling div &gt; a {
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        color: black;
-        display: inline-block;
-    }
-</style></p>
-<p><div class="bubbling">
+<p>a&#x30BF;&#x30B0;&#x3084;button&#x30BF;&#x30B0;&#x306B;event&#x51E6;&#x7406;&#x3092;&#x72EC;&#x81EA;&#x306B;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x51E6;&#x7406;&#x306E;&#x7D42;&#x308F;&#x308A;&#x306B;<code>return false;</code>&#x3092;&#x4ED8;&#x3051;&#x308B;</p>
+<p><strong>[&#x30C7;&#x30E2;]</strong></p>
+<div class="bubbling">
     <div class="none">
         <a href="">none</a>
     </div>
@@ -460,7 +440,8 @@ $(window).on(&#39;load&#39;, function(){ /*処理*/ });
     <div class="return_false">
         <a href="">return_false</a>
     </div>
-&lt;/div&gt;</div></p>
+</div>
+
 <script type="text/javascript">
     $(function() {
         $('.bubbling div').click(()=>{alert('hoge')});
@@ -533,44 +514,6 @@ $(window).on(&#39;load&#39;, function(){ /*処理*/ });
 <h3 id="&#x8981;&#x7D20;&#x306B;&#x4ED8;&#x4E0E;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x78BA;&#x8A8D;&#x65B9;&#x6CD5;">&#x8981;&#x7D20;&#x306B;&#x4ED8;&#x4E0E;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x78BA;&#x8A8D;&#x65B9;&#x6CD5;</h3>
 <p><code>$._data($(&apos;selector&apos;).get(0), &quot;events&quot;)</code></p>
 <h3 id="&#x30D5;&#x30EA;&#x30C3;&#x30AF;&#x64CD;&#x4F5C;">&#x30D5;&#x30EA;&#x30C3;&#x30AF;&#x64CD;&#x4F5C;</h3>
-<p><style type="text/css"></p>
-<pre><code>#flickscroll {
-    margin: 0 auto;
-    width: 400px;
-    height: 400px;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-#flickscroll ul {
-    top: 0;
-    left: 0;
-    height: 400px;
-    position: absolute;
-    display: inline-block;
-    overflow: hidden;
-}
-#flickscroll ul li {
-    width: 400px;
-    height: 400px;
-    float: left;
-    display: inline;
-    overflow: hidden;
-}
-#flickscroll ul:after {
-    content: &quot;.&quot;;
-    height: 0;
-    clear: both;
-    display: block;
-    visibility: hidden;
-}
-.gallery-wrapper {
-    margin: 0 auto;
-    width: 400px;
-    height: 400px;
-}
-</code></pre><p>&lt;/style&gt;</p>
 <p><div id="flickscroll">
     <ul>
         <li style="background-color: aqua;"></li>
@@ -643,89 +586,73 @@ $(window).on(&#39;load&#39;, function(){ /*処理*/ });
     });
 </script>
 
-<pre><code class="lang-js">$(function() {
-    var $setMainId = $(&#39;#flickscroll&#39;);
-    var scrollSpeed = 300;
+<pre><code class="lang-js">$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> $setMainId = $(<span class="hljs-string">&apos;#flickscroll&apos;</span>);
+    <span class="hljs-keyword">var</span> scrollSpeed = <span class="hljs-number">300</span>;
 
-    var $setMainUl = $setMainId.children(&#39;ul&#39;),
-    listWidth = parseInt($setMainUl.children(&#39;li&#39;).css(&#39;width&#39;)),
-    listCount = $setMainUl.children(&#39;li&#39;).length,
-    leftMax = -((listWidth)*((listCount)-1));
+    <span class="hljs-keyword">var</span> $setMainUl = $setMainId.children(<span class="hljs-string">&apos;ul&apos;</span>),
+    listWidth = <span class="hljs-built_in">parseInt</span>($setMainUl.children(<span class="hljs-string">&apos;li&apos;</span>).css(<span class="hljs-string">&apos;width&apos;</span>)),
+    listCount = $setMainUl.children(<span class="hljs-string">&apos;li&apos;</span>).length,
+    leftMax = -((listWidth)*((listCount)<span class="hljs-number">-1</span>));
 
-    $setMainUl.each(function() {
-        $(this).css({width:(listWidth)*(listCount)});
+    $setMainUl.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        $(<span class="hljs-keyword">this</span>).css({width:(listWidth)*(listCount)});
     });
 
-    var isTouch = (&#39;ontouchstart&#39; in window);
+    <span class="hljs-keyword">var</span> isTouch = (<span class="hljs-string">&apos;ontouchstart&apos;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span>);
     $setMainUl.bind({
-        &#39;touchstart mousedown&#39;: function(e) {
-            var $setMainUlNot = $setMainId.children(&#39;ul:not(:animated)&#39;);
-            $setMainUlNot.each(function() {
+        <span class="hljs-string">&apos;touchstart mousedown&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">var</span> $setMainUlNot = $setMainId.children(<span class="hljs-string">&apos;ul:not(:animated)&apos;</span>);
+            $setMainUlNot.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 e.preventDefault();
-                console.log(this);
-                this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-                this.leftBegin = parseInt($(this).css(&#39;left&#39;));
-                this.left = parseInt($(this).css(&#39;left&#39;));
-                this.touched = true;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>);
+                <span class="hljs-keyword">this</span>.pageX = (isTouch ? event.changedTouches[<span class="hljs-number">0</span>].pageX : e.pageX);
+                <span class="hljs-keyword">this</span>.leftBegin = <span class="hljs-built_in">parseInt</span>($(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">&apos;left&apos;</span>));
+                <span class="hljs-keyword">this</span>.left = <span class="hljs-built_in">parseInt</span>($(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">&apos;left&apos;</span>));
+                <span class="hljs-keyword">this</span>.touched = <span class="hljs-literal">true</span>;
             });
         },
-        &#39;touchmove mousemove&#39;: function(e) {
-            if(!this.touched) return;
+        <span class="hljs-string">&apos;touchmove mousemove&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.touched) <span class="hljs-keyword">return</span>;
             e.preventDefault();
-            this.left = this.left - (this.pageX - (isTouch ? event.changedTouches[0].pageX : e.pageX));
-            this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-                if (this.left &lt; 0 &amp;&amp; this.left &gt; leftMax) {
-                $(this).css({left:this.left});
+            <span class="hljs-keyword">this</span>.left = <span class="hljs-keyword">this</span>.left - (<span class="hljs-keyword">this</span>.pageX - (isTouch ? event.changedTouches[<span class="hljs-number">0</span>].pageX : e.pageX));
+            <span class="hljs-keyword">this</span>.pageX = (isTouch ? event.changedTouches[<span class="hljs-number">0</span>].pageX : e.pageX);
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.left &lt; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-keyword">this</span>.left &gt; leftMax) {
+                $(<span class="hljs-keyword">this</span>).css({left:<span class="hljs-keyword">this</span>.left});
             }
-            else if (this.left &gt;= 0) {
-                $(this).css({left:&#39;0&#39;});
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.left &gt;= <span class="hljs-number">0</span>) {
+                $(<span class="hljs-keyword">this</span>).css({left:<span class="hljs-string">&apos;0&apos;</span>});
             }
-            else if (this.left &lt;= leftMax) {
-                $(this).css({left:(leftMax)});
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.left &lt;= leftMax) {
+                $(<span class="hljs-keyword">this</span>).css({left:(leftMax)});
             }
         },
-        &#39;touchend mouseup mouseout&#39;: function(e) {
-            if (!this.touched) return;
-            this.touched = false;
-                if (this.leftBegin &gt; this.left &amp;&amp; (!((this.leftBegin) === (leftMax)))) {
-                $(this).stop().animate({left:((this.leftBegin)-(listWidth))},scrollSpeed);
+        <span class="hljs-string">&apos;touchend mouseup mouseout&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.touched) <span class="hljs-keyword">return</span>;
+            <span class="hljs-keyword">this</span>.touched = <span class="hljs-literal">false</span>;
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.leftBegin &gt; <span class="hljs-keyword">this</span>.left &amp;&amp; (!((<span class="hljs-keyword">this</span>.leftBegin) === (leftMax)))) {
+                $(<span class="hljs-keyword">this</span>).stop().animate({left:((<span class="hljs-keyword">this</span>.leftBegin)-(listWidth))},scrollSpeed);
             }
-            else if (this.leftBegin &lt; this.left &amp;&amp; (!((this.leftBegin) === 0))) {
-                $(this).stop().animate({left:((this.leftBegin)+(listWidth))},scrollSpeed);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.leftBegin &lt; <span class="hljs-keyword">this</span>.left &amp;&amp; (!((<span class="hljs-keyword">this</span>.leftBegin) === <span class="hljs-number">0</span>))) {
+                $(<span class="hljs-keyword">this</span>).stop().animate({left:((<span class="hljs-keyword">this</span>.leftBegin)+(listWidth))},scrollSpeed);
             }
-            else if (this.leftBegin === 0) {
-                $(this).css({left:&#39;0&#39;});
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.leftBegin === <span class="hljs-number">0</span>) {
+                $(<span class="hljs-keyword">this</span>).css({left:<span class="hljs-string">&apos;0&apos;</span>});
             }
-            else if (this.leftBegin &lt;= leftMax) {
-                $(this).css({left:(leftMax)});
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.leftBegin &lt;= leftMax) {
+                $(<span class="hljs-keyword">this</span>).css({left:(leftMax)});
             }
         }
     });
 });
 </code></pre>
-<h3>角度計算</h3>
-<p><style>
-.rect {
-    border: 1px solid #888;
-    width: 825px;
-    height: 300px;
-    padding: 0 8px 8px 0;
-    position: relative;
-}</p>
-<h1>target {</h1>
-<pre><code>position: absolute;
-display: block;
-width: 8px;
-height: 8px;
-background-color: red;
-</code></pre><p>}
-&lt;/style&gt;</p>
+<h3 id="&#x89D2;&#x5EA6;&#x8A08;&#x7B97;">&#x89D2;&#x5EA6;&#x8A08;&#x7B97;</h3>
 <p><div class="rect">
     <span id="target"></span>
 </div></p>
-<p><p>x：<span id="x"></span></p></p>
-<p><p>y：<span id="y"></span></p></p>
-<p><p>deg：<span id="deg"></span></p></p>
+<p></p><p>x&#xFF1A;<span id="x"></span></p><p></p>
+<p></p><p>y&#xFF1A;<span id="y"></span></p><p></p>
+<p></p><p>deg&#xFF1A;<span id="deg"></span></p><p></p>
 <script>
     const setPosition = angle => {
         const x1 = 412.5 ;
@@ -755,34 +682,34 @@ background-color: red;
     }, 100);
 </script>
 
-<pre><code class="lang-js">const setPosition = angle =&gt; {
-    const x1 = 412.5 ;
-    const y1 = 150 ;
-    const r = Math.floor(Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2)));
-    const a = angle - 90 ;
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> setPosition = angle =&gt; {
+    <span class="hljs-keyword">const</span> x1 = <span class="hljs-number">412.5</span> ;
+    <span class="hljs-keyword">const</span> y1 = <span class="hljs-number">150</span> ;
+    <span class="hljs-keyword">const</span> r = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.sqrt(<span class="hljs-built_in">Math</span>.pow(x1, <span class="hljs-number">2</span>) + <span class="hljs-built_in">Math</span>.pow(y1, <span class="hljs-number">2</span>)));
+    <span class="hljs-keyword">const</span> a = angle - <span class="hljs-number">90</span> ;
 
-    let x2 = x1 + r * Math.cos( a * (Math.PI / 180) ) ;
-    let y2 = y1 + r * Math.sin( a * (Math.PI / 180) ) ;
+    <span class="hljs-keyword">let</span> x2 = x1 + r * <span class="hljs-built_in">Math</span>.cos( a * (<span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span>) ) ;
+    <span class="hljs-keyword">let</span> y2 = y1 + r * <span class="hljs-built_in">Math</span>.sin( a * (<span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span>) ) ;
 
-    x2 = (x2 &lt; 0) ? 0 : (x2 &gt; x1*2) ? x1*2 : x2;
-    y2 = (y2 &lt; 0) ? 0 : (y2 &gt; y1*2) ? y1*2 : y2;
+    x2 = (x2 &lt; <span class="hljs-number">0</span>) ? <span class="hljs-number">0</span> : (x2 &gt; x1*<span class="hljs-number">2</span>) ? x1*<span class="hljs-number">2</span> : x2;
+    y2 = (y2 &lt; <span class="hljs-number">0</span>) ? <span class="hljs-number">0</span> : (y2 &gt; y1*<span class="hljs-number">2</span>) ? y1*<span class="hljs-number">2</span> : y2;
 
-    const element = document.getElementById(&quot;target&quot;) ;
-    element.style.top = y2 + &quot;px&quot; ;
-    element.style.left = x2 + &quot;px&quot; ;
-    document.getElementById(&quot;x&quot;).innerHTML=Math.round(x2);
-    document.getElementById(&quot;y&quot;).innerHTML=Math.round(y2);
-    document.getElementById(&quot;deg&quot;).innerHTML=a;
+    <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;target&quot;</span>) ;
+    element.style.top = y2 + <span class="hljs-string">&quot;px&quot;</span> ;
+    element.style.left = x2 + <span class="hljs-string">&quot;px&quot;</span> ;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;x&quot;</span>).innerHTML=<span class="hljs-built_in">Math</span>.round(x2);
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;y&quot;</span>).innerHTML=<span class="hljs-built_in">Math</span>.round(y2);
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;deg&quot;</span>).innerHTML=a;
 }
 
-let degree = 0 ;
-// setPosition( degree )
+<span class="hljs-keyword">let</span> degree = <span class="hljs-number">0</span> ;
+<span class="hljs-comment">// setPosition( degree )</span>
 
 setInterval(() =&gt; {
     setPosition( ++degree ) ;
-}, 100);
+}, <span class="hljs-number">100</span>);
 </code></pre>
-</style></p>
+
                                 
                                 </section>
                             
@@ -821,7 +748,7 @@ setInterval(() =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-25T01:44:48.150Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T02:21:29.086Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-25T03:05:32.746Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:13:37.025Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
