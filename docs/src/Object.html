@@ -306,48 +306,6 @@
 <span class="hljs-comment">// true</span>
 <span class="hljs-comment">// false</span>
 </code></pre>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<p><div>-------used async/await---------</div></p>
-<p><div id="hoge"></div></p>
-<p><div>-------used async/await---------</div></p>
-<p><div>-------Promise---------</div></p>
-<p><div id="foo"></div></p>
-<p><div>-------Promise---------</div></p>
-<script type="text/javascript">
-    const fn = (id) => {
-        return new Promise((resolve) => {
-            $(id).append($('<div>1</div>'));
-            resolve();
-        }).then(() => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    $(id).append($('<div>2</div>'));
-                    resolve();
-                }, 2000);
-            });
-        }).then(() => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    $(id).append($('<div>3</div>'));
-                    resolve();
-                }, 1000);
-            })
-        }).then(function() {
-            $(id).append($('<div>4</div>'));
-        });
-    };
-    (async () => {
-        for(let i = 0; i < 2; i++) {
-            await fn('#hoge');
-        }
-    })();
-    (() => {
-        for(let i = 0; i < 2; i++) {
-            fn('#foo');
-        }
-    })();
-</script>
 
                                 
                                 </section>
@@ -391,7 +349,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Object","level":"1.2.3","depth":2,"next":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"previous":{"title":"Promise","level":"1.2.2","depth":2,"path":"src/Promise.md","ref":"./src/Promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/Object.md","mtime":"2018-09-21T04:47:18.416Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:24:16.654Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Object","level":"1.2.3","depth":2,"next":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"previous":{"title":"Promise","level":"1.2.2","depth":2,"path":"src/Promise.md","ref":"./src/Promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/Object.md","mtime":"2018-09-25T03:33:51.703Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:34:00.943Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
