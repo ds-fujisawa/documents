@@ -120,8 +120,10 @@ $(function () {
 * **`window.onload = function()`	画像などコンテンツ全体が読み込まれた時**
 
 ### jQuery
+
 * **`$(document).ready`	HTMLが読み込まれた時**
-```javascript
+
+```js
 $(function(){ /*処理*/ });
 
 jQuery(function(){ /*処理*/ });
@@ -130,8 +132,10 @@ $(document).ready(function(){ /*処理*/ });
 
 jQuery(document).ready(function(){ /*処理*/ });
 ```
+
 * **`$(window).load`		画像などコンテンツ全体が読み込まれた時**
-```javascript
+
+```js
 $(window).load(function(){ /*処理*/ });
 
 jQuery(window).load(function(){ /*処理*/ });
@@ -140,15 +144,19 @@ $(window).on('load', function(){ /*処理*/ });
 
 jQuery(window).on('load', function(){ /*処理*/ });
 ```
+
 ※jQuery3からはdocument-readyが常に非同期になっているので↓は×みたい  
 (まだ試してはいない。。。)
+
 ```
 $(function(){
   $(window).on('load', function(){ /*処理*/ });
    /*処理*/
 });
 ```
+
 ↓のように分けないといけないみたい
+
 ```
 $(function(){ /* 処理 */ });
 $(window).on('load', function(){ /*処理*/ });

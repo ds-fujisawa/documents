@@ -386,23 +386,28 @@
 </ul>
 <h3 id="jquery">jQuery</h3>
 <ul>
-<li><strong><code>$(document).ready</code>    HTML&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong>
-```javascript
-$(function(){ /<em>&#x51E6;&#x7406;</em>/ });</li>
+<li><strong><code>$(document).ready</code>    HTML&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong></li>
 </ul>
-<p>jQuery(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
-<p>$(document).ready(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
-<p>jQuery(document).ready(function(){ /<em>&#x51E6;&#x7406;</em>/ });</p>
-<pre><code>* **`$(window).load`        &#x753B;&#x50CF;&#x306A;&#x3069;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;&#x5168;&#x4F53;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;**
-```javascript
-$(window).load(function(){ /*&#x51E6;&#x7406;*/ });
+<pre><code class="lang-js">$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
 
-jQuery(window).load(function(){ /*&#x51E6;&#x7406;*/ });
+jQuery(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
 
-$(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
 
-jQuery(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
-</code></pre><p>&#x203B;jQuery3&#x304B;&#x3089;&#x306F;document-ready&#x304C;&#x5E38;&#x306B;&#x975E;&#x540C;&#x671F;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x2193;&#x306F;&#xD7;&#x307F;&#x305F;&#x3044;<br>(&#x307E;&#x3060;&#x8A66;&#x3057;&#x3066;&#x306F;&#x3044;&#x306A;&#x3044;&#x3002;&#x3002;&#x3002;)</p>
+jQuery(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
+</code></pre>
+<ul>
+<li><strong><code>$(window).load</code>        &#x753B;&#x50CF;&#x306A;&#x3069;&#x30B3;&#x30F3;&#x30C6;&#x30F3;&#x30C4;&#x5168;&#x4F53;&#x304C;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x6642;</strong></li>
+</ul>
+<pre><code class="lang-js">$(<span class="hljs-built_in">window</span>).load(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
+
+jQuery(<span class="hljs-built_in">window</span>).load(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
+
+$(<span class="hljs-built_in">window</span>).on(<span class="hljs-string">&apos;load&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
+
+jQuery(<span class="hljs-built_in">window</span>).on(<span class="hljs-string">&apos;load&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-comment">/*&#x51E6;&#x7406;*/</span> });
+</code></pre>
+<p>&#x203B;jQuery3&#x304B;&#x3089;&#x306F;document-ready&#x304C;&#x5E38;&#x306B;&#x975E;&#x540C;&#x671F;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x2193;&#x306F;&#xD7;&#x307F;&#x305F;&#x3044;<br>(&#x307E;&#x3060;&#x8A66;&#x3057;&#x3066;&#x306F;&#x3044;&#x306A;&#x3044;&#x3002;&#x3002;&#x3002;)</p>
 <pre><code>$(function(){
   $(window).on(&apos;load&apos;, function(){ /*&#x51E6;&#x7406;*/ });
    /*&#x51E6;&#x7406;*/
@@ -746,7 +751,7 @@ setInterval(() =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-25T03:23:36.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-25T03:34:00.943Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"jQuery","level":"1.2.5","depth":2,"previous":{"title":"Array","level":"1.2.4","depth":2,"path":"src/Array.md","ref":"./src/Array.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hide-published-with":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"src/jQuery.md","mtime":"2018-09-28T01:21:26.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-28T01:26:29.826Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
