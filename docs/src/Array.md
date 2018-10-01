@@ -180,7 +180,14 @@ console.log(res);
 ### Array.prototype.reverse
 [詳しくはこちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 ```js
-TODO
+/* 概要 */
+// 配列の要素を反転させる
+
+/* 使い方 */
+console.log(['one', 'two', 'three'].reverse());
+
+/* 結果 */
+// (['three','two','one'])
 ```
 
 ### Array.prototype.slice
@@ -203,5 +210,26 @@ console.log([1,2,3,4,5,6].slice(0, 4));
 ### Array.prototype.sort
 [詳しくはこちら](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 ```js
-TODO
+/* 概要 */
+// 配列の要素を並び替える
+// ※１．引数(コールバック関数)の戻り値によって並び順が決まる
+// 　- コールバック関数(a, b)が0未満の場合、aをbより小さい添字にソート
+// 　- コールバック関数(a, b)が0を返す場合、aとbは互いに変更せず、他のすべての要素に対してソート
+// 　- コールバック関数(a, b)が0より大きい場合、bをaより小さい添字にソート
+// ※２．引数(コールバック関数)は省略可
+
+/* 使い方 */
+const res = [1, 30, 4, 21].sort(function(a, b) {
+  console.log(a, b)
+  return a - b;
+});
+console.log(res);
+
+/* 結果 */
+// 1 30
+// 30 4
+// 1 4
+// 30 21
+// 4 21
+// ([1,4,21,30])
 ```
