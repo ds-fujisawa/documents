@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+  	"start": "gitbook serve",
+  	"export": "gitbook build ./ docs/"
+  },
   "devDependencies": {
     "gitbook-cli": "^2.3.2"
   }
