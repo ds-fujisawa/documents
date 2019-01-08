@@ -11,5 +11,4 @@
 	* [Vue](./src/Vue.md)
 	* [PWA](./src/PWA.md)
 * css
-	* [Grid](./src/Grid.md)
-	* [Flexbox](./src/Flexbox.md)
+	* [Layout](./src/Layout.md)

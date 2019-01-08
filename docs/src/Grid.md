@@ -1,3 +1,0 @@
-# CSSGridメモ
-
-# ~WIP~
