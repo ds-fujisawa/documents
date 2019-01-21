@@ -2,6 +2,8 @@
 
 ## Flexbox
 
+[参考](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
+
 ```
   display: flex;
   display: inline-flex;
@@ -24,6 +26,8 @@ flex
 align-self
 
 ## Grid Layout
+
+[参考](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Grid_Layout)
 
 ```
   display: grid;
